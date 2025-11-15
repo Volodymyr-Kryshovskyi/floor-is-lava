@@ -5,5 +5,6 @@ using UnityEngine;
 public static class DataContainer 
 {
     public static int coins = 0;
+    public static int deaths = 0;
 
 }

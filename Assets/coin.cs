@@ -8,5 +8,11 @@ public class coin : MonoBehaviour
     private void Update()
     {
         transform.Rotate(200*Time.deltaTime, 0 , 0);
-    } 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        DataContainer.coins++;
+        Destroy(gameObject);
+    }
 }

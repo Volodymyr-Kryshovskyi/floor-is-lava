@@ -1283,7 +1283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7936ef0e4419841ab6db0e5eb5781d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 200
 --- !u!4 &233925170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7248642375954117489, guid: 644f125c265a94be0896b72ec4c04e7d, type: 3}
@@ -4206,7 +4205,7 @@ GameObject:
   - component: {fileID: 604278994}
   - component: {fileID: 604278993}
   m_Layer: 5
-  m_Name: Coins
+  m_Name: CoinsUi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7997,7 +7996,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c1a6eb4ab258b4bb3f5015294a4c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotateSpeed: 200
 --- !u!114 &1349730549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11239,6 +11237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf592515f65e264593028075312cb98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coins: {fileID: 0}
 --- !u!4 &1882170790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7248642375954117489, guid: 644f125c265a94be0896b72ec4c04e7d, type: 3}

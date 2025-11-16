@@ -17,8 +17,8 @@ public class RewardSystem : MonoBehaviour
 
     public void AddCoin()
     {
-        DataContainer._coins++;
-        if(DataContainer._coins >= coins.Length)
+        DataContainer.coins++;
+        if(DataContainer.coins >= coins.Length)
         {
             uIControl.FinishGame();
         }

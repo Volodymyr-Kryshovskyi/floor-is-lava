@@ -5381,7 +5381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &799095631
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11824,7 +11824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: {fileID: 1528903930}
   deaths: {fileID: 22993291}
-  winnerUi: {fileID: 0}
+  winnerUi: {fileID: 799095630}
 --- !u!222 &1880901613
 CanvasRenderer:
   m_ObjectHideFlags: 0

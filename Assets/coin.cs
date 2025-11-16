@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class coin : MonoBehaviour
 {
+     RewardSystem _rewardSystem ;
     [SerializeField] private float RotateSpeed = 200f;
+
+    private void Start()
+    {
+        _rewardSystem = GetComponentInParent<RewardSystem>();
+    }
     private void Update()
     {
         transform.Rotate(200*Time.deltaTime, 0 , 0);
@@ -12,7 +18,7 @@ public class coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        DataContainer.coins++;
+        _rewardSystem.AddCoin();
         Destroy(gameObject);
     }
 }

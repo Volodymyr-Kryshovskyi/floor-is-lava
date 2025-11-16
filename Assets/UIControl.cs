@@ -7,11 +7,17 @@ public class UIControl : MonoBehaviour
 {
     [SerializeField] private TMP_Text coins;
     [SerializeField] private TMP_Text deaths;
+    [SerializeField]private GameObject winnerUi;
 
     void Update()
     {
         coins.text = DataContainer.coins.ToString();
         deaths.text  = DataContainer.deaths.ToString();
 
+    }
+
+    public void FinishGame()
+    {
+        winnerUi.SetActive(true);
     }
 }

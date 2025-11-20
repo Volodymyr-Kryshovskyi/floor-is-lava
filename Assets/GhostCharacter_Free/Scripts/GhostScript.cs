@@ -299,12 +299,15 @@ public class GhostScript : MonoBehaviour
         {
             // player HP
             isDead = false;
+            DissolveFlg = false ;
+            Dissolve_value = 1 ;
             
             Ctrl.enabled = false;
-            this.transform.position = Vector3.zero; // player position
+            this.transform.position = respawn.position; // player position
             this.transform.rotation = Quaternion.Euler(Vector3.zero); // player facing
             Ctrl.enabled = true;
             
+            MoveDirection = Vector3.zero;
             // reset Dissolve
             Dissolve_value = 1;
             for(int i = 0; i < MeshR.Length; i++)

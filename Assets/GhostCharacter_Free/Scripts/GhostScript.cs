@@ -20,9 +20,10 @@ public class GhostScript : MonoBehaviour
     [SerializeField] private SkinnedMeshRenderer[] MeshR;
     private float Dissolve_value = 1;
     private bool DissolveFlg = false;
-    private const int maxHP = 3;
-    private int HP = maxHP;
-    private Text HP_text;
+    
+    private bool isDead;
+    
+    [SerializeField] private Transform respawn ;
 
     // moving speed
     [SerializeField] private float Speed = 4;
@@ -31,8 +32,7 @@ public class GhostScript : MonoBehaviour
     {
         Anim = this.GetComponent<Animator>();
         Ctrl = this.GetComponent<CharacterController>();
-        HP_text = GameObject.Find("Canvas/HP").GetComponent<Text>();
-        HP_text.text = "HP " + HP.ToString();
+
     }
 
     void Update()
@@ -72,13 +72,13 @@ public class GhostScript : MonoBehaviour
             }
         }
         // Dissolve
-        if(HP <= 0 && !DissolveFlg)
+        if(isDead  && !DissolveFlg)
         {
             Anim.CrossFade(DissolveState, 0.1f, 0, 0);
             DissolveFlg = true;
         }
         // processing at respawn
-        else if(HP == maxHP && DissolveFlg)
+        else if(!isDead && DissolveFlg)
         {
             DissolveFlg = false;
         }
@@ -100,7 +100,7 @@ public class GhostScript : MonoBehaviour
     private void STATUS ()
     {
         // during dissolve
-        if(DissolveFlg && HP <= 0)
+        if(DissolveFlg && isDead)
         {
             PlayerStatus[Dissolve] = true;
         }
@@ -283,12 +283,12 @@ public class GhostScript : MonoBehaviour
     private void Damage ()
     {
         // Damaged by outside field.
-        if(Input.GetKeyUp(KeyCode.S))
-        {
+         if(Input.GetKeyDown(KeyCode.P)) {
             Anim.CrossFade(SurprisedState, 0.1f, 0, 0);
-            HP--;
-            HP_text.text = "HP " + HP.ToString();
-        }
+            isDead = true ;
+            }
+            
+        
     }
     //---------------------------------------------------------------------
     // respawn
@@ -298,7 +298,7 @@ public class GhostScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             // player HP
-            HP = maxHP;
+            isDead = false;
             
             Ctrl.enabled = false;
             this.transform.position = Vector3.zero; // player position

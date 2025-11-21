@@ -39,7 +39,7 @@ public class GhostScript : MonoBehaviour
     {
         STATUS();
         GRAVITY();
-        Respawn();
+        // Respawn();
         // this character status
         if(!PlayerStatus.ContainsValue( true ))
         {
@@ -138,6 +138,7 @@ public class GhostScript : MonoBehaviour
         if(Dissolve_value <= 0)
         {
             Ctrl.enabled = false;
+            Respawn();
         }
     }
     // play a animation of Attack
@@ -295,8 +296,8 @@ public class GhostScript : MonoBehaviour
     //---------------------------------------------------------------------
     private void Respawn ()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
+        
+        
             // player HP
             isDead = false;
             DissolveFlg = false ;
@@ -316,7 +317,12 @@ public class GhostScript : MonoBehaviour
             }
             // reset animation
             Anim.CrossFade(IdleState, 0.1f, 0, 0);
-        }
+       
     }
+
+    public void LockInput()
+        {
+            Ctrl.enabled = false ;
+        }
 }
 }

@@ -281,7 +281,7 @@ public class GhostScript : MonoBehaviour
     //---------------------------------------------------------------------
     // damage
     //---------------------------------------------------------------------
-    private void Damage ()
+    public void Damage ()
     {
         // Damaged by outside field.
          if(Input.GetKeyDown(KeyCode.P)) {

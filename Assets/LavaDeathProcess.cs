@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class LavaDeathProcess : MonoBehaviour
 {
+
+    private GhostScript _ghostscript;
     private void OnTriggerEnter(Collider other)
     {
-        GhostScript ghost = other.GetComponent<GhostScript>();
-
-        if (ghost != null)
-        {
-            ghost.Damage();
+        if(_ghostscript = other.GetComponent<GhostScript>()) {
+            _ghostscript.Damage();
         }
-    }
+            
+        
+
+    } 
 }
 

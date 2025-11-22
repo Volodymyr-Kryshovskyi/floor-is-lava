@@ -37,6 +37,7 @@ public class GhostScript : MonoBehaviour
 
     void Update()
     {
+        
         STATUS();
         GRAVITY();
         // Respawn();
@@ -44,8 +45,8 @@ public class GhostScript : MonoBehaviour
         if(!PlayerStatus.ContainsValue( true ))
         {
             MOVE();
-            PlayerAttack();
-            Damage();
+            // PlayerAttack();
+            
         }
         else if(PlayerStatus.ContainsValue( true ))
         {
@@ -62,10 +63,10 @@ public class GhostScript : MonoBehaviour
             {
                 PlayerDissolve();
             }
-            else if(status_name == Attack)
-            {
-                PlayerAttack();
-            }
+            // else if(status_name == Attack)
+            // {
+            //     // PlayerAttack();
+            // }
             else if(status_name == Surprised)
             {
                 // nothing method
@@ -142,13 +143,13 @@ public class GhostScript : MonoBehaviour
         }
     }
     // play a animation of Attack
-    private void PlayerAttack ()
-    {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            Anim.CrossFade(AttackState,0.1f,0,0);
-        }
-    }
+    // private void PlayerAttack ()
+    // {
+    //     if(Input.GetKeyDown(KeyCode.A))
+    //     {
+    //         Anim.CrossFade(AttackState,0.1f,0,0);
+    //     }
+    // }
     //---------------------------------------------------------------------
     // gravity for fall of this character
     //---------------------------------------------------------------------
@@ -284,10 +285,10 @@ public class GhostScript : MonoBehaviour
     public void Damage ()
     {
         // Damaged by outside field.
-         if(Input.GetKeyDown(KeyCode.P)) {
+  
             Anim.CrossFade(SurprisedState, 0.1f, 0, 0);
             isDead = true ;
-            }
+ 
             
         
     }
